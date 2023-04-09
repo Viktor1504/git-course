@@ -3,10 +3,10 @@
 let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
 let lastWatchingMovie1 = prompt('Один из просмотренных фильмов?', '');
-let ratingMovie1 = prompt('На сколько оцените его?', '');
+let ratingMovie1 = +prompt('На сколько оцените его?', '');
 
 let lastWatchingMovie2 = prompt('Один из просмотренных фильмов?', '');
-let ratingMovie2 = prompt('На сколько оцените его?', '');
+let ratingMovie2 = +prompt('На сколько оцените его?', '');
 
 let personalMovieDB = {
     count: numberOfFilms,
