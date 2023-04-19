@@ -12,4 +12,4 @@ function getCoupeNumber(seatNumber) {
     return Math.ceil(seatNumber / 4);
 }
 
-console.log(getCoupeNumber(37));
+console.log(getCoupeNumber(5));
