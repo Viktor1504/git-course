@@ -3,12 +3,10 @@
 const someString = 'This is some strange string';
 
 function reverse(str) {
-    let newStr = '';
     if (typeof str !== 'string') return 'Ошибка!';
-    for (let i = str.length - 1; i >= 0; i--) {
-        newStr += str[i];
-    }
-    return newStr;
+    let arrSplit = str.split('');
+    arrSplit.reverse();
+    return arrSplit.join('');
 }
 
 console.log(reverse(someString));
