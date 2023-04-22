@@ -1,10 +1,17 @@
 'use strict'
 
-const someString = 'This is some strange string';
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+const mainAtm = [...baseCurrencies, ...additionalCurrencies];
 
-function reverse(str) {
-    if (typeof str !== 'string') return 'Ошибка!';
-    return str.split('').reverse().join('');
+function availableCurr(arr, missingCurr) {
+    if (arr.length === 0) return 'Нет доступных валют';
+    let str = 'Доступные валюты:\n';
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === missingCurr) continue;
+        str += `${arr[i]}\n`;
+    }
+    return str;
 }
 
-console.log(reverse(someString));
+console.log(availableCurr(mainAtm, 'USD'));
