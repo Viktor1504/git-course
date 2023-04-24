@@ -8,7 +8,7 @@ const personalMovieDB = {
     private: false,
     start: () => {
         personalMovieDB.count = prompt('Сколько фильмов вы уже посмотрели?', '').trim();
-        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+        while (personalMovieDB.count === '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
             personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
         }
     },
@@ -44,16 +44,28 @@ const personalMovieDB = {
     writeYourGenres: () => {
         for (let i = 1; i <= 3; i++) {
             personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`, '');
+            if (personalMovieDB.genres[i - 1] == null || personalMovieDB.genres[i - 1] === '') {
+                i--;
+            }
         }
+        personalMovieDB.genres.forEach((element, index) => {
+            console.log(`Любимый жанр #${index + 1} - это ${element}`);
+        });
+
+    },
+    toggleVisibleMyDB: () => {
+        personalMovieDB.private = !personalMovieDB.private;
     }
 };
 
-personalMovieDB.start();
-personalMovieDB.rememberMyFilms();
-personalMovieDB.detectPersonalMovie();
-personalMovieDB.showMyDB(personalMovieDB.private);
-personalMovieDB.writeYourGenres();
 
+// personalMovieDB.start();
+// personalMovieDB.rememberMyFilms();
+// personalMovieDB.detectPersonalMovie();
+//personalMovieDB.showMyDB(personalMovieDB.private);
+personalMovieDB.writeYourGenres();
+//personalMovieDB.toggleVisibleMyDB();
+//console.log(personalMovieDB.private);
 
 
 
