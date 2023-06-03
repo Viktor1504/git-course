@@ -51,5 +51,4 @@ function transferWaitors(data) {
 }
 
 transferWaitors(restorantData);
-
 console.log(restorantData);
