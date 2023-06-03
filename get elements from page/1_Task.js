@@ -1,22 +1,23 @@
 'use strict';
 
-const box = document.getElementById('box');
+const box = document.getElementById('box'),
+    btns = document.getElementsByTagName('button'),
+    circles = document.getElementsByClassName('circle'),
+    hearts = document.querySelectorAll('.heart'),
+    oneHeart = document.querySelector('.heart');
 
-console.log(box);
+box.style.backgroundColor = 'blue';
+box.style.width = '500px';
 
-const btns = document.getElementsByTagName('button')[1];
+box.style.cssText = 'background-color: blue; width: 1000px';
 
-console.log(btns);
+btns[1].style.borderRadius = '100%';
+circles[0].style.backgroundColor = 'red';
 
-const circles = document.getElementsByClassName('circle');
-
-console.log(circles);
-
-const hearts = document.querySelectorAll('.heart');
+// for (let i = 0; i < hearts.length; i++) {
+//     hearts[i].style.backgroundColor = 'blue';
+// }
 
 hearts.forEach(item => {
-    console.log(item);
+   item.style.backgroundColor = 'blue';
 });
-
-const oneHeart = document.querySelector('.heart');
-console.log(oneHeart);
