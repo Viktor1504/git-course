@@ -46,7 +46,6 @@ console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1]
 function transferWaitors(data) {
 
     let copy = JSON.parse(JSON.stringify(data));
-
     copy.waitors[0] = {name: 'Mike', age: 32};
     return copy;
 }
