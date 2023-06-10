@@ -46,16 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (newFilm) {
 
-            if (newFilm.length > 21) newFilm = newFilm.substring(0, 22) + '...';
-
-            if (favorite) console.log('Добавляем любимый фильм');
+            newFilm = newFilm.length > 21 ? newFilm.substring(0, 22) + '...' : newFilm;
+            favorite ? console.log('Добавляем любимый фильм') : null;
 
             movieDB.movies.push(newFilm);
             sortArr(movieDB.movies);
 
             createMovieList(movieDB.movies, movieList);
         }
-
 
         event.target.reset();
     });
@@ -85,13 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="delete"></div>
                  </li>`
         });
-        document.querySelectorAll('.delete').forEach((btn, i) => {
+        document.querySelectorAll('.delete').forEach((btn, i) => { //если хотим повесить событие на все элементы
             btn.addEventListener('click', () => {
                 btn.parentElement.remove();
                 movieDB.movies.splice(i, 1);
                 createMovieList(films, parent);
             });
-        }); //если хотим повесить событие на все элементы
+        });
     }
 
     deleteAdv(adv);
