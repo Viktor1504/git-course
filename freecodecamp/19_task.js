@@ -4,12 +4,12 @@ function sumAll(arr) {
     let max = Math.max(...arr);
     let min = Math.min(...arr);
 
-   // let sum = 0;
+    let sum = 0;
 
     for (let i = min; i <= max; i++) {
-        min += i;
+        sum += i;
     }
-    return min - 1
+    return sum
 }
 
-console.log(sumAll([1, 5])); // Выведет 10
+console.log(sumAll([1, 4])); // Выведет 10
