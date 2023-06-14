@@ -1,7 +1,7 @@
 'use strict';
 
-let movieName = "2001: A Space Odyssey";
-let numRegex = /\d/g; // Change this line
-let result = movieName.match(numRegex).length;
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i; // Change this line
+let result = userCheck.test(username);
 
 console.log(result)
