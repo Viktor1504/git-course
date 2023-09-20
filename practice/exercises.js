@@ -38,3 +38,6 @@ function getMathResult(a, b) {
 }
 
 console.log(getMathResult(5, 8));
+
+const logg = '12.2px';
+console.log(parseFloat(logg));
