@@ -40,4 +40,31 @@ function getMathResult(a, b) {
 console.log(getMathResult(5, 8));
 
 const logg = '12.2px';
-console.log(parseFloat(logg));
+console.log(parseInt(logg));
+
+function calculateVolumeAndArea(length) {
+    if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+        return "При вычислении произошла ошибка";
+    }
+
+    let volume = 0, area = 0;
+
+    volume = length * length * length;
+    area = 6 * (length * length);
+
+    return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+}
+
+console.log(calculateVolumeAndArea(5));
+
+function getCoupeNumber(seatNumber) {
+    if (typeof seatNumber !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+        return 'Ошибка. Проверьте правильность введенного номера места';
+    }
+    if (seatNumber === 0 || seatNumber > 36) {
+        return 'Таких мест в вагоне не существует';
+    }
+    return Math.ceil(seatNumber / 4);
+}
+
+console.log(getCoupeNumber(1));
