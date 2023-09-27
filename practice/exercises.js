@@ -119,3 +119,32 @@ function findMaxNumber(num1, num2, num3, num4) {
 }
 
 console.log(findMaxNumber(1, 5, 6.6, 11));
+
+//Fibonacci function
+function fib(n) {
+    // Проверяем, является ли переданный аргумент положительным целым числом
+    if (n < 1 || !Number.isInteger(n)) {
+        return '';
+    }
+
+    // Инициализируем массив для хранения чисел Фибоначчи
+    const fibSequence = [];
+
+    // Вычисляем числа Фибоначчи
+    for (let i = 0; i < n; i++) {
+        if (i === 0) {
+            fibSequence.push(0);
+        } else if (i === 1) {
+            fibSequence.push(1);
+        } else {
+            const nextFib = fibSequence[i - 1] + fibSequence[i - 2];
+            fibSequence.push(nextFib);
+        }
+    }
+
+    // Преобразуем массив чисел в строку, разделяя пробелами
+    return fibSequence.join(' ');
+}
+
+// Пример использования
+console.log(`Fibo ${fib(4)}`);
