@@ -68,3 +68,54 @@ function getCoupeNumber(seatNumber) {
 }
 
 console.log(getCoupeNumber(1));
+
+console.log(`
+
+
+
+`)
+
+function getTimeFromMinutes(num) {
+    if (typeof num !== 'number' || !Number.isInteger(num) || num < 0) {
+        return "Ошибка, проверьте данные";
+    }
+    const hour = Math.floor(num / 60);
+    const minutes = num % 60;
+
+    let hourWord = 'часов';
+    let minuteWord = 'минут';
+
+    if (hour === 1 || (hour > 20 && hour % 10 === 1)) {
+        hourWord = 'час';
+    } else if ((hour >= 2 && hour <= 4) || (hour > 21 && (hour % 10 === 2 || hour % 10 === 3 || hour % 10 === 4))) {
+        hourWord = 'часа';
+    }
+
+    if (minutes === 1 || (minutes > 20 && minutes % 10 === 1)) {
+        minuteWord = 'минута';
+    } else if ((minutes >= 2 && minutes <= 4) || (minutes > 21 && (minutes % 10 === 2 || minutes % 10 === 3 || minutes % 10 === 4))) {
+        minuteWord = 'минуты';
+    }
+
+    return `Это ${hour} ${hourWord} и ${minutes} ${minuteWord}`
+}
+
+console.log(getTimeFromMinutes(770));
+
+console.log(`
+
+
+
+`)
+
+function findMaxNumber(num1, num2, num3, num4) {
+    let arr = [num1, num2, num3, num4];
+    for (let arrKey of arr) {
+        if (arr.length < 4 || typeof arrKey !== 'number') {
+            return 0;
+        }
+    }
+    return Math.max(num1, num2, num3, num4);
+}
+
+console.log(findMaxNumber(1, 5, 6.6, 11));
