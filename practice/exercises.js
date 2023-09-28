@@ -147,4 +147,51 @@ function fib(n) {
 }
 
 // Пример использования
-console.log(`Fibo ${fib(4)}`);
+console.log(`Fibonacci ${fib(4)}`);
+
+
+console.log(`
+
+
+--------------Objects-------------
+`)
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function (plan) {
+        const lang = plan.skills.languages.join(' ').toUpperCase();
+        return `Мне ${plan.age} и я владею языками: ${lang}`;
+    }
+};
+
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+function showExperience(plan) {
+    return plan['skills']['exp'];
+}
+
+console.log(showExperience(personalPlanPeter));
+
+function showProgrammingLangs(plan) {
+    let str = '';
+    let programmingLangs = plan.skills.programmingLangs;
+
+    if (Object.keys(programmingLangs).length > 0) {
+        for (const key in programmingLangs) {
+            str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+        }
+        return str;
+    }
+    return str;
+}
+
+console.log(showProgrammingLangs(personalPlanPeter));
