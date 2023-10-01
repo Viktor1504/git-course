@@ -195,3 +195,53 @@ function showProgrammingLangs(plan) {
 }
 
 console.log(showProgrammingLangs(personalPlanPeter));
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+    if (arr.length > 0) {
+        return `Семья состоит из: ${arr.join(' ')}`;
+    }
+    return 'Семья пуста';
+}
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    arr.forEach(city => {
+        console.log(city.toLowerCase());
+    });
+}
+
+console.log(showFamily(family));
+console.log();
+standardizeStrings(favoriteCities);
+console.log();
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+    if (typeof str != 'string') {
+        return 'Ошибка!';
+    }
+    return str.split('').reverse().join('');
+}
+
+console.log(reverse(someString));
+console.log();
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+    let str = arr.length === 0 ? 'Нет доступных валют' : 'Доступные валюты:\n';
+    arr.forEach(elem => {
+        if (elem !== missingCurr) {
+            str += `${elem}\n`;
+        }
+    });
+    return str;
+}
+
+console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
+
