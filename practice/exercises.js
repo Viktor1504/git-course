@@ -245,3 +245,53 @@ function availableCurr(arr, missingCurr) {
 
 console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
 
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000
+}
+
+function isBudgetEnough(data) {
+    let v = 0;
+    data.shops.forEach(item => {
+        v += item.width * item.length * data.height;
+    });
+    return v * data.moneyPer1m3 <= data.budget ? 'Бюджета достаточно' : 'Бюджета недостаточно';
+}
+
+console.log(isBudgetEnough(shoppingMallData));
+
+console.log();
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi'];
+
+function sortStudentsByGroups(arr) {
+    arr.sort();
+    let allArr = [];
+    const lengthArr = Math.floor(arr.length / 3) * 3;
+    for (let i = 0; i < lengthArr; i += 3) {
+        allArr.push(arr.slice(i, i + 3));
+    }
+    arr.length % 3 === 0 ? allArr.push('Оставшиеся студенты: -') : allArr.push(`Оставшиеся студенты: ${arr.slice(lengthArr).join(', ')}`);
+    return allArr;
+}
+
+console.log(sortStudentsByGroups(students));
